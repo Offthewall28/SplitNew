@@ -42,10 +42,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-
-        // Add a marker in Sydney and move the camera
+        SupportMapFragment mMapFragment;
+        // Add a marker in MIT and move the camera
         LatLng sydney = new LatLng(42.3603, -71.0873);
         mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in MIT"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+
+
+//        mMapFragment = ((SupportMapFragment)getSupportFragmentManager().findFragmentById(R.id.mapFragment));
+//        mMap = mMapFragment.getMap();
+//
+//        mMapFragment.getView().setVisibility(View.INVISIBLE);
     }
 }
